@@ -58,7 +58,7 @@ void ArvoreBinaria::InsereRecursivo(TipoNo* &p, TipoItem item)
 {
     if(p == NULL)
     {
-        p = new TipoNo();
+        p = new TipoNo;
         p->item = item;
     }
     else
@@ -102,13 +102,13 @@ void ArvoreBinaria::RemoveRecursivo(TipoNo* &no, TipoChave chave)
         {
             aux = no;
             no = no->esq;
-            free(aux);
+            delete aux;
         }
         else if(no->esq == NULL)
         {
             aux = no;
             no = no->dir;
-            free(aux);
+            delete aux;
         }
         else
             Antecessor(no, no->esq);
