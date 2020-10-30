@@ -83,7 +83,7 @@ void ArvoreBinaria::Antecessor(TipoNo *q, TipoNo* &r)
     q->item = r->item;
     q = r;
     r = r->esq;
-    free(q);
+    delete q;
 }
 void ArvoreBinaria::RemoveRecursivo(TipoNo* &no, TipoChave chave)
 {
